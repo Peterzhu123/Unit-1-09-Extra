@@ -1,49 +1,25 @@
-/****************************************************************************
- *
- * Created by: Peter Zhu
- * Created on: May
- * This is a program about MultiArray
- 
- ****************************************************************************/
-public class MultiArray {
-	
-	private static int sum = 0;
-	private static int count = 0;
-	private static int minNumber = 60;
-	private static int maxNumber = 100;
-	private static int different = maxNumber - minNumber;
+//
+// Created by: Peter Zhu
+// Created on: May 2018
+// This program is about 2-d Array 
 
-	public static void main(String[] args) {
-		String[][]array = new String[4][7];
-		
-		array[0][0] = "Student 1: ";
-		array[1][0] = "Student 2: ";
-		array[2][0] = "Student 3: ";
-		array[3][0] = "Student 4: ";
-		
-		for(int number = 0; number < 4; number++) {
-			for(int number2 = 1;number2 < 7; number2++) {
-				int rand = minNumber + (int)(Math.random()*(different));
-				array[number][number2] = String.valueOf(rand);
-				count++;
-			}
-		}
-		for(int row = 0; row < array.length; row++) {
-			for(int colum = 1;colum < array[row].length;colum++) {
-				sum = sum + Integer.parseInt(array[row][colum]);
-			
-			}
-		}
-		
-		for(int number = 0; number < 4; number++) {
-			for(int number2 = 0; number2 <7;number2++) {
-				System.out.print(array[number][number2] + " ");
-			}
-			System.out.println();
-				
-		}
-		System.out.println("The class average is : " + sum/count);
+import Foundation
+var sum = 0
+var count = 0
+var number = 6
+var array = [[(Int)]]()
 
-	}
+for row in 0 ... 3 {
+    array.append([Int]())
 
+for rand in 0 ... number {
+    array[row].append(Int(arc4random_uniform(100)))
+    count+=1
+    sum = array.joined().reduce(0, +)
+    }
 }
+print ("\(array)")
+print ("The sum is \(sum)")
+var final = sum/count
+print("The average is : \(final)")
+
